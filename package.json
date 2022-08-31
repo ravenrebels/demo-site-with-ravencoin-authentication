@@ -1,0 +1,27 @@
+{
+  "name": "simple",
+  "private": true,
+  "version": "1.0.0",
+  "description": "A minimalistic web site that uses Ravencoin NFTs for authentication",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "express": "^4.18.1",
+    "express-session": "^1.17.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ravenrebels/demo-site-with-ravencoin-authentication.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ravenrebels/demo-site-with-ravencoin-authentication/issues"
+  },
+  "homepage": "https://github.com/ravenrebels/demo-site-with-ravencoin-authentication#readme"
+}
