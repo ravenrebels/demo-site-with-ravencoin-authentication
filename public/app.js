@@ -10,9 +10,13 @@ async function pollStatus() {
   if (data.authenticated) {
     authenticated(data);
   }
+  console.log(data);
 }
-anonymous();
-pollStatus();
+
+anonymous().then((data) => {
+  pollStatus();
+});
+
 const anonymousInterval = setInterval(pollStatus, 2000);
 
 function authenticated(data) {
@@ -34,11 +38,8 @@ function authenticated(data) {
 }
 async function anonymous() {
   const dom = document.getElementById("app");
-  dom.innerHTML = `
-  <h1>Members only</h1>
-  <div>
-      <button id="buttonSignIn" class="btn btn-primary">Click to sign in</button>
-  </div> 
+  dom.innerHTML = ` 
+
   `;
 
   const URL = "/signin/step1";
@@ -49,12 +50,10 @@ async function anonymous() {
   const orderRef = data.orderRef;
 
   dom.innerHTML = ` 
-      <h2>Sign in on this device</h2>
-      To sign in on this device click <a target="_blank" class="button" href="${signInURL}">HERE</a>
-
-      <h2>Sign in on your mobile device</h2>
-   
-      <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${signInURL}"/>
+  <h1>Members only</h1>
+  <div>
+      <a target="_blank" class="button" href="${signInURL}">Click to sign in</a>
+      </div> 
 
       <div id="status"></div> 
       `;
