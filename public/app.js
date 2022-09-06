@@ -25,9 +25,24 @@ function authenticated(data) {
   const dom = document.getElementById("app");
   dom.innerHTML = ` 
    <h1>Weeee you are athenticated <code id="nft">${data.nft}</code></h1>
+
+    <img id="image" width=200></img>
     <button id="buttonSignOut">Sign out</button>
     `;
-
+  //Get image
+  const p = fetch(
+    "https://agile-journey-76489.herokuapp.com/assetmetadata/" +
+      encodeURIComponent(data.nft)
+  );
+  p.then(async (d) => {
+    console.log(d);
+    const obj = await d.json();
+    console.log(obj);
+    if (obj && obj.ipfs) {
+      const imageURL = "https://gateway.ipfs.io/ipfs/" + obj.ipfs;
+      document.getElementById("image").setAttribute("src", imageURL);
+    }
+  });
   document
     .getElementById("buttonSignOut")
     .addEventListener("click", async function (event) {
