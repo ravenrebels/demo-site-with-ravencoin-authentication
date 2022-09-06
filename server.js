@@ -29,7 +29,7 @@ app.listen(port, () => {
 
 app.get("/signin/step1", async function (req, res) {
   //Get an order from Identity Provider
-  const authURL = "https://infinite-gorge-31721.herokuapp.com/rp/v5.1/sign";
+  const authURL = "https://idp.ravenrebels.com/rp/v5.1/sign";
 
   const message = "Sign in to local example of Ravencoin sign in";
   const userVisibleData = btoa(message);
@@ -44,7 +44,7 @@ app.get("/signin/step1", async function (req, res) {
 
   const responseData = axiosResponse.data;
   responseData.signInURL =
-    "https://infinite-gorge-31721.herokuapp.com/?orderRef=" + orderRef;
+    "https://idp.ravenrebels.com/?orderRef=" + orderRef;
 
   res.send(responseData);
 });
@@ -63,7 +63,7 @@ app.get("/authenticated", async function (req, res) {
   //Check if sign in is on its way
   if (obj.authenticated === false && obj.orderRef) {
     const authURL =
-      "https://infinite-gorge-31721.herokuapp.com/orders/" + obj.orderRef;
+      "https://idp.ravenrebels.com/orders/" + obj.orderRef;
     const axiosResponse = await axios.get(authURL);
 
     obj.data = axiosResponse.data;

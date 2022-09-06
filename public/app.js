@@ -57,16 +57,11 @@ function anonymous() {
       const signInURL = data.signInURL;
       const orderRef = data.orderRef;
 
+      window.open(signInURL);
       dom.innerHTML = `
       
       <h2>Sign in on this device</h2>
-      To sign in on this device click <a target="_blank" class="button" href="${signInURL}">HERE</a>
-
-      <h2>Sign in on your mobile device</h2>
-   
-      <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${signInURL}"/>
-
-      <div id="status"></div>
+      <div id="status">Signing in</div>
       
       `;
       //window.open(data.signInURL);
