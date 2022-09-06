@@ -8,7 +8,7 @@ const sess = {
   cookie: {},
 };
 
-const port = 80;
+const port = process.env.PORT || 5000;
 
 if (app.get("env") === "production") {
   app.set("trust proxy", 1); // trust first proxy
