@@ -41,8 +41,11 @@ h2 {
   margin-top: 40px;
   display: block;
 }
-button, .button {
-  background-color: #4CAF50; /* Green */
+
+button,
+.button {
+  background-color: #4CAF50;
+  /* Green */
   border: none;
   color: white;
   padding: 15px 32px;
@@ -50,4 +53,30 @@ button, .button {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+
+  margin-top: 20px;
+}
+
+.card {
+
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body img {
+  border-radius: 10px;
+}
+
+.card-body {
+  padding: 10px;
+  text-align: center;
+}
+
+.card-footer {
+  text-align: center;
+  font-size: 30px;
+  min-height: 30px;
+
 }

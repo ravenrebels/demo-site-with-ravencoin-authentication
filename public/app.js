@@ -24,9 +24,17 @@ function authenticated(data) {
   clearInterval(anonymousInterval);
   const dom = document.getElementById("app");
   dom.innerHTML = ` 
-   <h1>Weeee you are athenticated <code id="nft">${data.nft}</code></h1>
+   <h1>Weeee you are athenticated</h1>
 
-    <img id="image" width=200></img>
+    <div class="card glassy">
+      <div class="card-body">
+          <img id="image" width=200></img>
+      </div>
+      <div class="card-footer glassy">
+        <code id="nft">${data.nft}</code>
+      </div>
+    </div>
+    
     <button id="buttonSignOut">Sign out</button>
     `;
   //Get image

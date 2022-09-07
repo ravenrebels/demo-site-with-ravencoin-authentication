@@ -71,6 +71,7 @@ app.get("/authenticated", async function (req, res) {
     obj.data = axiosResponse.data;
     obj.hintCode = obj.data.hintCode;
     if (obj.data.status === "complete") {
+      console.log("From Identity provider got", obj.data);
       req.session.userInfo = obj.data;
     }
   }
