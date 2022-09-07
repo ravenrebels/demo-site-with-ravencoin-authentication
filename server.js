@@ -8,6 +8,8 @@ const sess = {
   cookie: {},
 };
 
+
+
 const port = process.env.PORT || 5000;
 
 if (app.get("env") === "production") {
@@ -31,7 +33,7 @@ app.get("/signin/step1", async function (req, res) {
   //Get an order from Identity Provider
   const authURL = "https://idp.ravenrebels.com/rp/v5.1/sign";
 
-  const message = "Sign in to local example of Ravencoin sign in";
+  const message = "Sign in with Ravencoin NFT demo site " + new Date().toISOString();
   const userVisibleData = btoa(message);
   const obj = {
     userVisibleData,
