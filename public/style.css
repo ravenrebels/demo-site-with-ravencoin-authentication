@@ -24,7 +24,7 @@ body {
   background: black;
 
   background-image: url(https://cdn.pixabay.com/photo/2012/01/09/09/59/earth-11595_1280.jpg);
-  background-image: url(https://cryptologos.cc/logos/ravencoin-rvn-logo.svg?v=023);
+ /* background-image: url(https://cryptologos.cc/logos/ravencoin-rvn-logo.svg?v=023);*/
   
   background-size: cover;
 }
