@@ -77,7 +77,6 @@ async function anonymous() {
   <div>
       <a target="_blank" class="button" href="${signInURL}" >Sign in</a>
       </div> 
-
-      <div id="status"></div> 
+       <div id="status"></div> 
       `;
 }
