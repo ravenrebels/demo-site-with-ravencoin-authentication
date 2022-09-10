@@ -23,7 +23,7 @@ body {
   font-size: 18px;
   background: black;
 
-  background-image: url(https://cdn.pixabay.com/photo/2016/11/29/11/34/skyline-1869214_1280.jpg);
+  background-image: url(https://cdn.pixabay.com/photo/2012/01/09/09/59/earth-11595_1280.jpg);
 
   background-size: cover;
 }
@@ -44,19 +44,22 @@ h2 {
 
 button,
 .button {
-  background-color: #4CAF50;
-  /* Green */
-  border: none;
+  background-color: black;
   color: white;
+  border: none;
+
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 32px;
 
   margin-top: 20px;
 }
 
+h1{
+  font-size: 400%;
+}
 .card {
 
   border-radius: 10px;

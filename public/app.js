@@ -24,14 +24,14 @@ function authenticated(data) {
   clearInterval(anonymousInterval);
   const dom = document.getElementById("app");
   dom.innerHTML = ` 
-   <h1>Weeee you are athenticated</h1>
+   <h1>Welcome</h1>
 
     <div class="card glassy">
       <div class="card-body">
-          <img id="image" width=200></img>
+          <img id="image" width=300></img>
       </div>
       <div class="card-footer glassy">
-        <code id="nft">${data.nft}</code>
+        <code id="nft" style="color: black">${data.nft}</code>
       </div>
     </div>
     
@@ -75,7 +75,7 @@ async function anonymous() {
   dom.innerHTML = ` 
   <h1>Members only</h1>
   <div>
-      <a target="_blank" class="button" href="${signInURL}">Click to sign in</a>
+      <a target="_blank" class="button" href="${signInURL}" >Sign in</a>
       </div> 
 
       <div id="status"></div> 
