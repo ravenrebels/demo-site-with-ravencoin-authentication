@@ -56,7 +56,7 @@ The response
 
 ### STEP 2
 
-RP starts polling status
+The demo web site (Relying Party) starts polling status every 2 seconds
 
 Request
 
