@@ -2,6 +2,7 @@
 
 A minimalistic web site that uses Ravencoin NFTs for authentication
 
+You can try out this demo online https://demo-ravencoin-webapp.herokuapp.com/
 # GETTING STARTED
 
 ## Clone the repo from github
@@ -117,3 +118,6 @@ Response when status "complete"
     "status": "complete"
 }
 ```
+
+STEP 4
+The web site stores the user information, because the authentication order over at idp.ravenrebels.com will be deleted within minutes.
