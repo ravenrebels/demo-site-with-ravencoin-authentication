@@ -16,7 +16,13 @@ A minimalistic web site that uses Ravencoin NFTs for authentication
 
 `node server`
 
-open [http://localhost](http://localhost)
+## How it works
+
+- The web sites requests a authentication order from the Identity Provider (idp.ravenrebels.com) and get `orderRef`(id) and `endUserURL` back
+- The web sites opens `endUserURL` in a new window/tab so that the end user can fill out the authentication form.
+- The web site starts pulling status and when status is "complete" the response contains nft (Unique Asset), address and signature.
+
+ 
 
 ## How it works technically
 
@@ -45,16 +51,19 @@ Host: idp.ravenrebels.com
 The response
 
 ```
-{
-  orderRef: 'aaff69ac-6070-4c0e-bf19-7f9d0854293a',
+ {
+  orderRef: '7776abab-f16c-4491-8e82-45acccf8c247',
   endUserIp: '127.0.0.1',
-  userVisibleData: 'RGF0ZTogMjAyMi0wOC0zMFQwNzowMjoyMS45ODFaIFNpZ24gaW4gdG8gc3VwZXIgd2ViIHNpdGUgZG90IGNvbQ==',
+  endUserURL: 'https://idp.ravenrebels.com?orderRef=7776abab-f16c-4491-8e82-45acccf8c247',
+  userVisibleData: 'RGF0ZTogMjAyMi0wOS0xMlQwNjo1NjoxOC4wMTlaIFNpZ24gaW4gdG8gc3VwZXIgd2ViIHNpdGUgZG90IGNvbQ==',
   hintCode: 'outstandingTransaction',
-  createdDate: '2022-08-30T07:02:27.750Z'
+  createdDate: '2022-09-12T06:56:19.356Z'
 }
 ```
-
 ### STEP 2
+The web site opens `endUserURL` in a new window or tab so that the end user can authenticate.
+
+### STEP 3
 
 RP starts polling status
 
