@@ -65,7 +65,7 @@ The web site opens `endUserURL` in a new window or tab so that the end user can 
 
 ### STEP 3
 
-RP starts polling status
+The demo web site (Relying Party) starts polling status every 2 seconds
 
 Request
 
