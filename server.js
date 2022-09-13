@@ -10,7 +10,7 @@ const sess = {
 
 
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 80;
 
 if (app.get("env") === "production") {
   app.set("trust proxy", 1); // trust first proxy
@@ -51,32 +51,45 @@ app.get("/signin/step1", async function (req, res) {
   res.send(responseData);
 });
 
+//Check if user is authenticated or not
 app.get("/authenticated", async function (req, res) {
-  const obj = {
-    authenticated: false,
+
+ 
+  const dataToUser = {
+    authenticated: !!req.session.userInfo,
     orderRef: req.session.orderRef,
   };
 
-  if (req.session.userInfo) {
-    obj.authenticated = true;
-    obj.nft = req.session.userInfo.userResponse.nft;
-  }
 
-  //Check if sign in is on its way
-  if (obj.authenticated === false && obj.orderRef) {
+  //Only fetch data from Identity Provider if user is not yet authenticated
+  if (dataToUser.authenticated === false && dataToUser.orderRef) {
+
+    //Pull status from Identity provider
     const authURL =
-      "https://idp.ravenrebels.com/orders/" + obj.orderRef;
+      "https://idp.ravenrebels.com/orders/" + dataToUser.orderRef;
     const axiosResponse = await axios.get(authURL);
 
-    obj.data = axiosResponse.data;
-    obj.hintCode = obj.data.hintCode;
-    if (obj.data.status === "complete") {
-      console.log("From Identity provider got", obj.data);
-      req.session.userInfo = obj.data;
+    dataToUser.data = axiosResponse.data;
+    dataToUser.hintCode = dataToUser.data.hintCode;
+
+    //If authentication order is complete, update the user session
+    if (dataToUser.data.status === "complete") {
+      dataToUser.authenticated = true;
+      console.log("From Identity provider got", dataToUser.data);
+      req.session.userInfo = dataToUser.data;
     }
   }
 
-  res.send(obj);
+  if (dataToUser.authenticated) {
+    dataToUser.authenticated = true;
+    dataToUser.nft = req.session.userInfo.userResponse.nft; 
+    dataToUser.ipfs = req.session.userInfo.meta.ipfs;
+  }
+
+
+
+
+  res.send(dataToUser);
 });
 
 app.get("/session", function (req, res) {
