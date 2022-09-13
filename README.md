@@ -97,29 +97,34 @@ Response when status "complete"
 
 ```
 {
-    "completionData": {
-        "user": {
-            "personalNumber": "FREN#WONDERLAND",
-            "name": "FREN#WONDERLAND",
-            "givenName": "R9ViFY6HbQqz5N8h159g7PFGNymN6khaRU",
-            "surname": "FREN#WONDERLAND"
-        },
-        "device": {
-            "ipAddress": "::ffff:172.16.48.78"
-        },
-        "cert": {
-            "notBefore": "1660638691933",
-            "notAfter": "5980638817306"
-        },
-        "signature": "H0mJY/c29PHTXtQuirp5t2Nt30T34zQFUGz8uw+nuHiRfcZteiPLQKaNmliVWJ2n3Gy/bUUIhVelYp3yyLnKhbM=",
-        "address": "R9ViFY6HbQqz5N8h159g7PFGNymN6khaRU",
-        "nft": "FREN#WONDERLAND",
-        "ocspResponse": ""
-    },
-    "userVisibleData": "U2lnbiBpbiB3aXRoIFJhdmVuY29pbiBORlQgZGVtbyBzaXRlIDIwMjItMDktMTBUMTM6NTE6MzEuODMzWg==",
-    "orderRef": "77eb0ceb-9b26-4983-be97-26ea8a5de97f",
-    "hintCode": "",
-    "status": "complete"
+    "orderRef": "1aff0200-f300-4083-8740-d7a3472684b5",
+    "endUserIp": "127.0.0.1",
+    "endUserURL": "https: //idp.ravenrebels.com?orderRef=1aff0200-f300-4083-8740-d7a3472684b5",
+    "userVisibleData": "U2lnbiBpbiB3aXRoIFJhdmVuY29pbiBORlQgZGVtbyBzaXRlIDIwMjItMDktMTNUMDk6Mjc6MDMuMjMwWg==",
+    "hintCode": "outstandingTransaction",
+    "createdDate": "2022-09-13T09: 27: 04.377Z",
+    "userResponse": {
+      "address": "R9ViFY6HbQqz5N8h159g7PFGNymN6khaRU",
+      "message": "Sign in with Ravencoin NFT demo site 2022-09-13T09: 27: 03.230Z",
+      "nft": "FREN#WONDERLAND",
+      "orderRef": "1aff0200-f300-4083-8740-d7a3472684b5",
+      "signature": "HxROA5Dvu/cdgXAYte5n4NA7t59sE7BR7BnkX6Y1LZ6iQU8/fld/Mnjm3eF3QD0hkkqXSvEfqB67mhOtshM4CRA=",
+      "ipAddress": { "address": ": :ffff: 172.19.65.134", "family": "IPv6", "port": 26850
+    }
+  },
+    "status": "complete",
+    "meta": {
+      "sats_in_circulation": 100000000,
+      "divisions": 0,
+      "reissuable": false,
+      "has_ipfs": true,
+      "ipfs": "QmPdwHENQ4jvDEsxNqQfSo9jXfwYuysDvcY4dWQFX6fn8K",
+      "source": {
+        "tx_hash": "d6b5536e17629937c520c3aabab6f0b2cd79b578c7f13ddf26a9ddd3d4673a90",
+        "tx_pos": 3,
+        "height": 2400319
+    }
+  }
 }
 ```
 
