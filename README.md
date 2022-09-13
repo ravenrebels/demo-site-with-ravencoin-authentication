@@ -65,10 +65,10 @@ The response
   createdDate: '2022-09-12T06:56:19.356Z'
 }
 ```
-### STEP 2
+ 
 The web site opens `endUserURL` in a new window or tab so that the end user can authenticate.
 
-### STEP 3
+### STEP 2
 
 The demo web site (Relying Party) starts polling status every 2 seconds
 
@@ -123,5 +123,8 @@ Response when status "complete"
 }
 ```
 
-STEP 4
-The web site stores the user information, because the authentication order over at idp.ravenrebels.com will be deleted within minutes.
+### STEP 3
+
+When the order is complete (status==="complete") we welcome the user.
+
+The web site stores the user information (in the user session), because the authentication order over at idp.ravenrebels.com will be deleted within minutes.
