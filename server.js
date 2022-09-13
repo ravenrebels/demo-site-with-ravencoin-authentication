@@ -41,12 +41,12 @@ app.get("/signin/step1", async function (req, res) {
   };
   const axiosResponse = await axios.post(authURL, obj);
 
+  console.log("Response identity provider, step 1", axiosResponse.data);
   const orderRef = axiosResponse.data.orderRef;
   req.session.orderRef = orderRef;
 
   const responseData = axiosResponse.data;
-  responseData.signInURL =
-    "https://idp.ravenrebels.com/?orderRef=" + orderRef;
+ 
 
   res.send(responseData);
 });
@@ -54,7 +54,7 @@ app.get("/signin/step1", async function (req, res) {
 //Check if user is authenticated or not
 app.get("/authenticated", async function (req, res) {
 
- 
+
   const dataToUser = {
     authenticated: !!req.session.userInfo,
     orderRef: req.session.orderRef,
@@ -82,12 +82,12 @@ app.get("/authenticated", async function (req, res) {
 
   if (dataToUser.authenticated) {
     dataToUser.authenticated = true;
-    dataToUser.nft = req.session.userInfo.userResponse.nft; 
-    dataToUser.ipfs = req.session.userInfo.meta.ipfs;
-  }
+    dataToUser.nft = req.session.userInfo.userResponse.nft;
 
-
-
+    if (req.session.userInfo.meta) { //Does meta data exist?
+      dataToUser.ipfs = req.session.userInfo.meta.ipfs;
+    }
+  } 
 
   res.send(dataToUser);
 });

@@ -92,7 +92,7 @@ async function anonymous() {
 
   const asdf = await fetch(URL);
   const data = await asdf.json();
-  const signInURL = data.signInURL;
+  const signInURL = data.endUserURL;
   const orderRef = data.orderRef;
 
   dom.innerHTML = ` 
