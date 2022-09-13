@@ -1,5 +1,28 @@
-//Check authentication status
 
+/*
+
+DISCLAIMER
+
+This is a PROOF OF CONCEPT  / DEMO project.
+Not intendet for production user.
+
+
+To make the code as easy to grasp as possible it is written in pure vanilla JavaScript. No library, no framework.
+Nothing fancy pancy.
+
+*/
+
+/*
+  The user is either ANONYMOUS or AUTHENTICATED
+
+  Every 2 seconds we poll the user status.
+
+  function anonymous = what should happen when the user is not yet signed in
+  function authenticated = no more polling status, just show the welcome message to the end user
+
+*/
+
+//Check authentication status
 async function pollStatus() {
   const asdf = await fetch("/authenticated");
   const data = await asdf.json();
