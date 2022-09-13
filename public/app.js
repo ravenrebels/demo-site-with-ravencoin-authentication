@@ -61,19 +61,15 @@ function authenticated(data) {
     <button id="buttonSignOut">Sign out</button>
     `;
   //Get image
-  const p = fetch(
-    "https://agile-journey-76489.herokuapp.com/assetmetadata/" +
-      encodeURIComponent(data.nft)
-  );
-  p.then(async (d) => {
-    console.log(d);
-    const obj = await d.json();
-    console.log(obj);
-    if (obj && obj.ipfs) {
-      const imageURL = "https://gateway.ipfs.io/ipfs/" + obj.ipfs;
-      document.getElementById("image").setAttribute("src", imageURL);
-    }
-  });
+
+  console.log("DATA", data);
+
+
+  if (data && data.ipfs) {
+    const imageURL = "https://gateway.ipfs.io/ipfs/" + data.ipfs;
+    document.getElementById("image").setAttribute("src", imageURL);
+  }
+
   document
     .getElementById("buttonSignOut")
     .addEventListener("click", async function (event) {
