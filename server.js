@@ -51,19 +51,7 @@ app.get("/signin/step1", async function (req, res) {
   res.send(responseData);
 });
 
-app.get("/mempool", async function (request, response){
-
-  try{
-      const URL = "http://86.107.103.192:5299/mempool";
-      const axiosResponse = await axios.get(URL);
-      response.send(axiosResponse.data);
-  }
-  catch(e){
-    response.status(500);
-    response.send({error: "Internal server error"})
-  }
-
-});
+ 
 //Check if user is authenticated or not
 app.get("/authenticated", async function (req, res) {
 
