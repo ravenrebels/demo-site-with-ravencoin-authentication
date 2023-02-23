@@ -75,9 +75,9 @@ The demo web site (Relying Party) starts polling status every 2 seconds
 Request
 
 ```
-POST /rp/v5.1/collect HTTP/1.1
-Content-Type: application/json
-Host: idp.ravenrebels.com
+//POST /rp/v5.1/collect HTTP/1.1
+//Content-Type: application/json
+//Host: idp.ravenrebels.com
 {
   "orderRef":"131daac9-16c6-4618-beb0-365768f37288"
 }
