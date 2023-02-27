@@ -6,8 +6,8 @@ You can try out this demo online https://demo-ravencoin-webapp.herokuapp.com/
 
 ## How it works
 Just three steps, create the authentication order, pull/poll the status of the order, say hello to the user. That's it.
-- The web sites requests a authentication order from the Identity Provider (idp.ravenrebels.com) and get `orderRef`(id) and `endUserURL` back
-- The web sites opens `endUserURL` in a new window/tab so that the end user can fill out the authentication form.
+- The web site requests a authentication order from the Identity Provider (idp.ravenrebels.com) and get `orderRef`(id) and `endUserURL` back
+- The web site opens `endUserURL` in a new window/tab so that the end user can fill out the authentication form.
 - The web site starts pulling status and when status is "complete" the response contains nft (Unique Asset), address and signature.
 
 
